@@ -23,7 +23,7 @@ pipeline {
                                                                  }
                                                         script {
                                                                 sh 
-                                                                echo "Stage-2 Completed -21050832  part2
+                                                                echo "Stage-2 Completed -21050832  part2"
                                                                  }
                                                      }
                   
