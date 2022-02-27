@@ -11,7 +11,9 @@ pipeline {
                     }
             }
         }
-
+  parallel{
+  
+  
         stage("Stage-2-21050832 ")
         {
             steps
@@ -23,7 +25,7 @@ pipeline {
                   
                 }
                     
-          stage("Stage-3-21050832 ")
+        stage("Stage-3-21050832 ")
         {
             steps
             {
@@ -32,7 +34,7 @@ pipeline {
                     }   
                     }
                     }
-                    
+         }           
                     
          stage("Stage-4-21050832 ")
         {
