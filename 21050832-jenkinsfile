@@ -7,7 +7,7 @@ pipeline {
             steps
             {
                 script {
-                        echo "INFO: Build Stage"
+                        echo "INFO: Build Stage1"
                     }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps
             {
                 script {
-                            echo "INFO: Deploy Stage"
+                            echo "INFO: Deploy Stage2"
                     }
             }
         }
