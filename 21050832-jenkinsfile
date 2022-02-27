@@ -1,60 +1,25 @@
 pipeline {
-
-    agent {
-        node {
-            label 'master'
-        }
-    }
-
-    tools { 
-        maven 'maven3' 
-    }
-
-    options {
-        buildDiscarder logRotator( 
-                    daysToKeepStr: '15', 
-                    numToKeepStr: '10'
-            )
-    }
-
-    
+    agent any
     stages {
-        
-        Stage 1 - 21050832 {
-            steps {
-                
-                echo "Stage 1 Completed- 21050832"
-                
-            }
-        }
-        
-        parallel {
 
-        Stage 2 - 21050832 {
-            steps {
-                echo "Stage 2 Completed- 21050832"
-                
+        stage("Build")
+        {
+            steps
+            {
+                script {
+                        echo "INFO: Build Stage"
+                    }
             }
         }
 
-        Stage 3 - 21050832 {
-            steps {
-                 sh 'mvn install -Dmaven.test.skip=true'
-                 echo "Stage 3 Completed- 21050832"
+        stage("Deploy")
+        {
+            steps
+            {
+                script {
+                            echo "INFO: Deploy Stage"
+                    }
             }
         }
-        }
-
-        Stage 4 - 21050832 {
-            steps {
-               echo "Stage 4 Completed- 21050832"
-            }
-             }
-
-        Stage 5 - 21050832 {
-            steps {
-              echo "Stage 4 Completed- 21050832"
-            }
-        }
-
-    }   
+    }
+}
