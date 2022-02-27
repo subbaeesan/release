@@ -11,7 +11,6 @@ pipeline {
                     }
             }
         }
-  parallel{
   
   
         stage("Stage-2-21050832 ")
@@ -32,9 +31,9 @@ pipeline {
                 script {
                              echo "Stage-3 Completed -21050832"
                     }   
-                    }
-                    }
-         }           
+               }
+         }
+                 
                     
          stage("Stage-4-21050832 ")
         {
@@ -44,8 +43,8 @@ pipeline {
                              echo "Stage-4 Completed -21050832"
                     }
                     
-                    }
-                    }
+             }
+       }
                     
            stage("Stage-5-21050832 ")
         {
