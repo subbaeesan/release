@@ -1,0 +1,62 @@
+pipeline {
+
+        agent any
+        stages{
+              stage('Stage-21050832'){
+                     steps{
+                              echo 'Stage-1 Completed-21050832'
+                         }
+                         
+              }
+              
+              stage('Build Container'){
+              
+                  parallel{
+                          stage('Stage-2-21050832'){
+                          steps{
+                                  sh  docker run -dit --name stage2-21050832-container -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832-image /bin/bash
+                                   echo 'Stage-2 Completed-21050832'
+                                   
+                                 }
+                               }
+                               
+                           stage('Stage-3-21050832'){
+                           
+                                                      steps{
+                                                              echo 'Stage-3 Completed-21050832'
+                                                              
+                                                           }
+                                                           
+                                                     }
+                                                     
+                                            }
+                                            
+                                            
+                                      }
+                                      
+                                      stage('Stage-4-21050832'){
+                                      
+                                      steps{
+                                                input('Proceed to release the works?')
+                                           }
+                                           
+                                           }
+                                           
+                                           
+                                           
+                         stage('Stage-5-21050832'){
+                                      
+                                      when{
+                                             not{
+                                                  branch "master will execute" 
+                                                  
+                                                  }
+                                           
+                                          }
+                                          steps echo 'Work Released-21050832'
+                                          
+                                          }
+                                     }
+                                     
+                                     
+                              }
