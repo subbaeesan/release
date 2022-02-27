@@ -6,11 +6,7 @@ pipeline {
         }
     }
 
-    tools { 
-        maven 'maven3' 
-    }
-
-    options {
+        options {
         buildDiscarder logRotator( 
                     daysToKeepStr: '15', 
                     numToKeepStr: '10'
