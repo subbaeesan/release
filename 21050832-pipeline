@@ -19,7 +19,11 @@ pipeline {
                                                 steps{
                                                         script {
                                                                 sh 
-                                                                echo "Stage-2 Completed -21050832"
+                                                                echo "Stage-2 Completed -21050832 part 1"
+                                                                 }
+                                                        script {
+                                                                sh 
+                                                                echo "Stage-2 Completed -21050832  part2
                                                                  }
                                                      }
                   
