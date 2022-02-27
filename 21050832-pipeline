@@ -2,13 +2,15 @@ pipeline {
     agent any
     stages {
 
-        stage("Stage 1-21050832"){
-            steps
-            {
-                script {
-                        echo "Stage-1 Completed -21050832"
-                    }
-            }
+                stage("Stage 1-21050832"){
+                                          steps{
+                                                 script {
+                                                          echo "Stage-1 Completed -21050832"
+                                                         }
+                                                }
+                                                
+                                        }
+            
         stage('Creating Container'){   
         
                 parallel{
@@ -32,7 +34,7 @@ pipeline {
                                                             }   
                                                     }
                                              }
-                 
+                  }
                     
          stage("Stage-4-21050832 "){
                                          steps{
@@ -52,7 +54,3 @@ pipeline {
                     
                                                 }
                                     }
-    }
-}
-}
-}
