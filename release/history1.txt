@@ -1,0 +1,762 @@
+    1  vi /etc/gdm3/custom.conf 
+    2  cd /etc/pam.d/
+    3  ls
+    4  vi gdm-password
+    5  useradd -m -d /home/dockeradm -s /bin/bash -g docker dockeradm
+    6  useradd -m -d /home/dockeradm -s /bin/bash dockeradm
+    7  passwd dockeradm
+    8  apt-get update
+    9  apt-get install xserver-xorg-core
+   10  apt-get install xserver-xorg-input-all
+   11  apt-get install xrdp
+   12  vi /etc/xrdp/xrdp.ini
+   13  vi /root/.profile 
+   14  usermod xrdp -G ssl-cert xrdp
+   15  usermod -G ssl-cert xrdp
+   16  /etc/init.d/xrdp restart
+   17  apt-get update
+   18  apt-get install     apt-transport-https     ca-certificates     curl     gnupg     lsb-release
+   19  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   20  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   21    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   22  apt-get update
+   23  apt-get install docker-ce docker-ce-cli containerd.io
+   24  su - dockeradm
+   25  usermod -G docker dockeradm
+   26  su - dockeradm
+   27  docker run hello-world
+   28  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   29    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   30  apt-get update
+   31  apt-get install docker-ce docker-ce-cli containerd.io
+   32  docker start
+   33  docker ps
+   34  init 6
+   35  docker run hello-world
+   36  apt-get update
+   37  apt-get install     apt-transport-https     ca-certificates     curl     gnupg     lsb-release
+   38  curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   39  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+   40    $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+   41  apt-get update
+   42  apt-get install docker-ce docker-ce-cli containerd.io
+   43  docker run hello-world
+   44  usermod -aG docker dockeradm
+   45  docker ps
+   46  docker list
+   47  docker ls
+   48  docker -help
+   49  dockert
+   50  docker container ls
+   51  docker images
+   52  history
+   53  vi /opt/google/chrome/google-chrome
+   54  vim /opt/google/chrome/google-chrome
+   55  apt install vim 
+   56  apt-get install vim
+   57  vim /opt/google/chrome/google-chrome
+   58  docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+   59  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   60  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   61  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   62  install minikube-linux-amd64 /usr/local/bin/minikube
+   63  minikube start
+   64  su - dockeradm
+   65  kubectl get po -A
+   66  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   67  curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+   68  echo "$(<kubectl.sha256) kubectl" | sha256sum --check
+   69  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+   70  kubectl version --client
+   71  kubectl cluster-info
+   72  kubectl start
+   73  apt-get update
+   74  apt-get install -y apt-transport-https ca-certificates curl
+   75  curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+   76  echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   77  apt-get update
+   78  apt-get install -y kubectl
+   79  echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   80  apt-get update
+   81  apt-get install -y kubectl
+   82  snap install kubectl
+   83  snap install kubectl --classic
+   84  kubectl version --client
+   85  kubectl cluster-info
+   86  minikube start
+   87  su - dockeradm
+   88  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+   89  sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+   90      /etc/apt/sources.list.d/jenkins.list'
+   91  apt-get update
+   92  cd /etc/apt/sources.list.d/
+   93  ls
+   94  vi kubernetes.list
+   95  apt-get update
+   96  apt-get install jenkins
+   97  apt update
+   98  apt install openjdk-11-jdk
+   99  vi /etc/init.d/jenkins
+  100  apt install openjdk-11-jdk
+  101  apt-get install jenkins
+  102  systemctl enable jenkins
+  103  vi /etc/init.d/jenkins
+  104  systemctl restart jenkins
+  105  systemctl daemon-reload
+  106  systemctl restart jenkins
+  107  cat /var/lib/jenkins/secrets/initialAdminPassword
+  108  cd /
+  109  exit
+  110  systemctl enable docker
+  111  systemctl restart docker
+  112  docker ps
+  113  docker start minikube
+  114  docker ps
+  115  docker start ubuntu1804
+  116  docker ps
+  117  exit
+  118  apt-get -y install xrdp
+  119  nano /etc/xrdp/xrdp.ini
+  120  vi /etc/xrdp/xrdp.ini
+  121  /etc/init.d/xrdp restart
+  122  ifconfig -a
+  123  vi /etc/default/jenkins
+  124  service jenkins restart
+  125  init 6
+  126  passwd dockeradm
+  127  cd /home/
+  128  ls
+  129  cd soi-sddo/
+  130  ls
+  131  cd Documents/
+  132  ls
+  133  cd..
+  134  ls
+  135  cd..
+  136  cd ..
+  137  cd dockeradm/
+  138  ls
+  139  cd Planet-Crops_Project/
+  140  git config --global user.mail subbaeesan@gmail.com
+  141  git config --global user.name subbaeesan
+  142  git status
+  143  git commit -m "Added a readme file for Project"
+  144  git config --global user.name subbaeesan
+  145  git config --global user.mail subbaeesan@gmail.com
+  146  git config --global user.mail "subbaeesan@gmail.com"
+  147  git config --global user.name "lithisha"
+  148  git commit -m "Added a readme file for Project"
+  149  git config --global user.mail "cvaa@hotmail.com"
+  150  git config --global user.name "subbaeesan"
+  151  git commit -m "Added a readme file for Project"
+  152  c..
+  153  cd ..
+  154  rm -f Planet-Crops_Project/
+  155  rmdir -f Planet-Crops_Project/
+  156  rmdir -R Planet-Crops_Project/
+  157  rm -r Planet-Crops_Project/
+  158  dir
+  159  mkdir Planet-Corps_Project
+  160  git config --global username.email subbaeesan@gmail.com
+  161  git config --list
+  162  git config user.name lithisha
+  163  git config --global user.name lithisha
+  164  git config list
+  165  git config --list
+  166  clear
+  167  ls
+  168  cd Planet-Corps_Project/
+  169  ls
+  170  git init
+  171  ls .git
+  172  touch readme.txt
+  173  echo "Release pipeline for Planet-Crops"
+  174  echo "Release pipeline for Planet-Crops" > readme.txt 
+  175  cat readme.txt 
+  176  clear
+  177  git add readme.txt 
+  178  git status
+  179  git commit -m "Added a readme file for project"
+  180  omit --global
+  181  show all git config
+  182  git config --list
+  183  apt remove git
+  184  apt update -y
+  185  apt install git
+  186  apt upgrade -y
+  187  git status
+  188  git config --global user.email "subbaeesan@gmail.com"
+  189  git config --global user.name "lithisha"
+  190  git status
+  191  git commit -m "Added a readme file for project"
+  192  ls
+  193  clear
+  194  ls
+  195  mkdir POC
+  196  git status
+  197  git add POC
+  198  git status
+  199  ls
+  200  git status
+  201  git diff
+  202  vi readme.txt 
+  203  git status
+  204  git log --online
+  205  git graph
+  206  git log
+  207  clear
+  208  https://github.com/lithisha/release.git
+  209  touch gitkey
+  210  vi key
+  211  ls
+  212  rm gitkey
+  213  ls
+  214  git remote add origin https://github.com/lithisha/release.git git push -u origin master
+  215  git remote add origin https://github.com/lithisha/release.git git push master
+  216  git remote add origin https://github.com/lithisha/release.git git push -u origin master
+  217  git remote add origin https://github.com/lithisha/release.git
+  218  git push -u origin master
+  219  vi key
+  220  cd /home
+  221  cd dockeradm/
+  222  ls
+  223  cd Planet-Corps_Project/
+  224  git status
+  225  git add readme.txt 
+  226  git status
+  227  git push - branch master
+  228  git push -u origin master
+  229  ls
+  230  git status
+  231  git fetch
+  232  ls
+  233  git remote -v
+  234  git push -u origin main
+  235  clear
+  236  git push -u origin master
+  237  git branch main
+  238  git checkout main
+  239  ls
+  240  git fetch
+  241  ls
+  242  git remote -v
+  243  git merge
+  244  git pull
+  245  git pull remote main
+  246  git branch master
+  247  git checkout master
+  248  ls
+  249  mkdir release
+  250  cd release
+  251  touch Dockerfile
+  252  cd ..
+  253  ls
+  254  git add release
+  255  git remote push
+  256  clear
+  257  git status
+  258  git commit -m "create relase folder and Dockerfile"
+  259  git push -u origin master
+  260  clear
+  261  git status
+  262  git add key
+  263  git status
+  264  clear
+  265  git remote -v
+  266  clear
+  267  docker --version
+  268  docker images
+  269  git merge
+  270  ls
+  271  cd release
+  272  ls
+  273  clear
+  274  vi Dockerfile
+  275  cat Dockerfile 
+  276  docker -ps
+  277  docker images
+  278  docker -ps
+  279  clear
+  280  docker status
+  281  clear
+  282  docker ps
+  283  ls
+  284  cd ..
+  285  git status
+  286  git add release/Dockerfile 
+  287  git status
+  288  git merge
+  289  git fetch
+  290  ls
+  291  cd..
+  292  ls
+  293  cd release/
+  294  docker build -t apache2-21-5-832 .
+  295  docker images
+  296  docker rm e59
+  297  docker rm image e59
+  298  docker image prune
+  299  docker images
+  300  ls
+  301  cd ..
+  302  ls
+  303  cd /
+  304  ls
+  305  cd home
+  306  ;s
+  307  ls
+  308  cd dockeradm/
+  309  ls
+  310  cd Planet-Corps_Project/
+  311  ;s
+  312  ls
+  313  cd /home
+  314  ls
+  315  cd dockeradm/
+  316  ;s
+  317  ls
+  318  cd Dow
+  319  cd Downloads/
+  320  ls
+  321  mv Planet-Corps.tar.xz /home/dockeradm/Planet-Corps_Project/release/
+  322  cd ..
+  323  ls
+  324  cd Planet-Corps_Project/
+  325  cd release/
+  326  clear
+  327  ls
+  328  docker build image -t apache2-21050832 .
+  329  clear
+  330  dir
+  331  docker build -t apache2-21050832 .
+  332  docker image prune
+  333  docker images
+  334  vi Dockerfile 
+  335  pwd
+  336  vi Dockerfile 
+  337  docker build -t apache2-21050832 .
+  338  docker image prune
+  339  vi Dockerfile 
+  340  docker build -t apache2-21050832 .
+  341  docker image prune
+  342  clear
+  343  pwd
+  344  ls
+  345  ls Planet-Corps.tar.xz 
+  346  ls -ltrr
+  347  ls -ltr
+  348  more Planet-Corps.tar.xz 
+  349  clear
+  350  vi Planet-Corps.tar.xz 
+  351  clear
+  352  docker commit -m "created new image for apache2 course work" -a "Paramasivam 21050832" apache2-21050832 apache2-21050832-image
+  353  docker images
+  354  docker tag apache2-21050832-image:latest lithisha/apache2-2105082:3.0
+  355  docker push lithisha/apache2-2105082:3.0
+  356  clear
+  357  docker images
+  358  docker ps
+  359  docker log -tf apache2-21050832
+  360  clear
+  361  cd /var/lib/docker
+  362  ls
+  363  cd volumes
+  364  ls
+  365  cd localwebvolume/
+  366  ls
+  367  cd Planet-Corps/
+  368  copy *.* ../_data/
+  369  mv *.* ../_data/
+  370  ls
+  371  mvdir *.* ../_data/
+  372  mv -f *.* ../_data/
+  373  mv --help
+  374  dir
+  375  ls
+  376  mv css ../_data/
+  377  ls
+  378  mv font/ ../_data/
+  379  ls
+  380  cd img/ ../_data/
+  381  ls
+  382  mv img/ ../
+  383  ls
+  384  cd js/ ../_data/
+  385  ls
+  386  mv js/ ../_data/
+  387  ls
+  388  mv READMDE ../_data/
+  389  mv READMDE~ ../_data/
+  390  ;s
+  391  cd ..
+  392  rm Planet-Corps/
+  393  rmdir Planet-Corps/
+  394  ls
+  395  cd img/ ./_data/
+  396  mv img/ ./_data/
+  397  ls
+  398  cd _data/
+  399  ls
+  400  clear
+  401  ls
+  402  clear
+  403  ls
+  404  vi index.html 
+  405  docker ps 
+  406  clear
+  407  docker images
+  408  docker logs -ft apache2-21050832 
+  409  /etc/init.dxrdp stop
+  410  /etc/init.d/xrdp stop
+  411  /etc/init.d/xrdp start
+  412  passwd dockeradm
+  413  ifconfig
+  414  /etc/init.d/xrdp restart
+  415  /etc/init.d/xrdp stop
+  416  reboot
+  417  clear
+  418  docker images
+  419  docker container ps -a
+  420  clear
+  421  docker pull apache2-21050832
+  422  clear
+  423  docker tag apache2-21050832:latest lithisha/apache2-2105082:2.0
+  424  docker login
+  425  docker push lithisha/apache2-2105082:2.0 
+  426  docker run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume/Planet-Corps,dst=/var/www/html apache2-21050832 /bin/bash
+  427  docker run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832 /bin/bash
+  428  clear
+  429  docker ps -a
+  430  docker exec -it apache2-21050832 /bin/bash
+  431  clear
+  432  docker images
+  433  apt-get install jenkins
+  434  vi /etc/init.d/jenkins
+  435  systemctl enable jenkins
+  436  apt install openjdk-11-jdk
+  437  ckear
+  438  clear
+  439  docker images
+  440  docker pull jenkins/jenkins
+  441  docker images
+  442  pwd
+  443  cd /home/
+  444  ls
+  445  cd dockeradm/
+  446  ls
+  447  cd Planet-Corps_Project/
+  448  mdkir jenkins
+  449  mkdir jenkins
+  450  clear
+  451  cd jenkins/
+  452  ls
+  453  cleaar
+  454  clear
+  455  vi docker-compose.yml
+  456  mkdir jenkins_home
+  457  ls
+  458  vi docker-compose.yml 
+  459  id
+  460  docker-compose up -d
+  461  snap install docker
+  462  docker-compose up -d
+  463  cd /home/
+  464  cd dockeradm/
+  465  cd Planet-Corps_Project/
+  466  clear
+  467  ls
+  468  cd release/
+  469  ls
+  470  git status
+  471  git add *
+  472  git status
+  473  git commit -m "upload web pages"
+  474  git merge
+  475  git push remote
+  476  clear
+  477  ls
+  478  vi Dockerfile 
+  479  docker built -t test .
+  480  docker build -t testiamge .
+  481  ls
+  482  pwd
+  483  vi Dockerfile 
+  484  docker build -t testimage2 .
+  485  docker build -t testimage2 ls
+  486  ls
+  487  pwd
+  488  cd /home/dockeradm/
+  489  ls
+  490  cd 
+  491  clear
+  492  ls
+  493  cd Downloads/
+  494  ls
+  495  pwd
+  496  cd ..
+  497  ls
+  498  cd /home
+  499  ls
+  500  cd soi-sddo/
+  501  ls
+  502  cd ..
+  503  ls
+  504  cd dockeradm/
+  505  ls
+  506  cd Downloads/
+  507  ls
+  508  mv Planet-Corps -r /home/dockeradm/Planet-Corps_Project/release/
+  509  mv Planet-Corps /home/dockeradm/Planet-Corps_Project/release/
+  510  cd /home/dockeradm/Planet-Corps_Project/release/
+  511  ls
+  512  cd Planet-Corps/
+  513  ls
+  514  cd ..
+  515  docker volume create localwebvolume
+  516  docker  volume inspect localwebvolume
+  517  git status
+  518  ls
+  519  mv Planet-Corps /var/lib/docker/volumes/localwebvolume/
+  520  ls
+  521  docker images prune
+  522  docker image prune
+  523  vi Dockerfile 
+  524  ls
+  525  cd /home/dockeradm/
+  526  ls
+  527  cd Planet-Corps_Project/
+  528  ls
+  529  cd ..
+  530  ls
+  531  cd Downloads/
+  532  ls
+  533  mv index.html /home/dockeradm/Planet-Corps_Project/release/
+  534  ls
+  535  cd /home/dockeradm/Planet-Corps_Project/release/
+  536  ls
+  537  git add all
+  538  git add
+  539  ls
+  540  cd ..
+  541  git status
+  542  git add all
+  543  git add *
+  544  git status
+  545  git merge 
+  546  git merge remote
+  547  clear
+  548  cd release/
+  549  docker images
+  550  docker build -t testing .
+  551  docker images
+  552  docker image prune
+  553  clear
+  554  docker build -t apache2-21050832 .
+  555  docker images
+  556  docker image rm testing
+  557  docker image rm testing:latest
+  558  docker rm --help
+  559  clear
+  560  docker push lithisha/apache2-21050832:latest
+  561  docker images
+  562  docker tag apache2-21050832:latest lithisha/apache2-21050832:1.0
+  563  docker push lithisha/apache2-21050832:1.0
+  564  docker login
+  565  docker push lithisha/apache2-21050832:1.0
+  566  clear
+  567  docker run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832 /bin/bash
+  568  docker ps
+  569  docker -t exec apache2-21050832 /bin/bash
+  570  docker ps
+  571  docker network ls
+  572  docker container -tf apache2-210550832
+  573  clear
+  574  ls
+  575  docker ps
+  576  docker ps -a
+  577  docker container prune -a
+  578  docker container prune -q
+  579  docker container prune 
+  580  docker ps -a
+  581  docker exec -it apache2-21050832 /bin/bash
+  582  clear
+  583  docker ps -a
+  584  docker volume ls
+  585  docker inspect apache2-21050832
+  586  ping 172.17.0.3 -t
+  587  ping 172.17.0.3
+  588  clear
+  589  telnet 172.17.0.3 5000
+  590  telnet 172.17.0.3 50
+  591  telnet 172.17.0.3 80
+  592  docker exec -it apache2-21050832 /bin/bash
+  593  clear
+  594  docker ps
+  595  docke ps
+  596  docker container ps
+  597  docker container stop apache2-21050832 
+  598  clear
+  599  docker images
+  600  docker image prune
+  601  docker images
+  602  docker container
+  603  docker container ps
+  604  clear
+  605  docker image prune -a
+  606  docker images
+  607  clear
+  608  vi Dockerfile 
+  609  docker build -t apache2-21050832 .
+  610  ls
+  611  docker image prune -a
+  612  vi Dockerfile 
+  613  clear
+  614  docker build -t apache2-21050832 .
+  615  docker image prune -a
+  616  vi Dockerfile 
+  617  docker image prune -a
+  618  docker build -t apache2-21050832 .
+  619  docker image prune -a
+  620  vi Dockerfile 
+  621  docker build -t apache2-21050832 .
+  622  docker image prune -a
+  623  docker images
+  624  docker images -a
+  625  docker images
+  626  docker image prune -a
+  627  docker images
+  628  docker image prune -a
+  629  docker images
+  630  docker image prune
+  631  docker images
+  632  docker image prune -a
+  633  docker container ps
+  634  docker container ps -a
+  635  docker container prune -a
+  636  docker container prune
+  637  docker container 
+  638  docker container ps -a
+  639  clear
+  640  docker image prune -a
+  641  docker images -a
+  642  clear
+  643  docker pull ubuntu:18:04
+  644  clear
+  645  docker build -t apache2-21050832 .
+  646  docker container ps -a
+  647  clear
+  648  docker images
+  649  cat Dockerfile 
+  650  history
+  651  history > history.txt
+  652  vi history
+  653  ls
+  654  rm history
+  655  vi history.txt 
+  656  ls
+  657  cd /
+  658  cd /var/lib
+  659  ls
+  660  cd docker
+  661  ls
+  662  cd volumes/
+  663  ls
+  664  cd localwebvolume/
+  665  ls
+  666  cd _data/
+  667  ls
+  668  cd /
+  669  clear
+  670  ls
+  671  cd /home
+  672  cd dockeradm/
+  673  cd Planet-Corps_Project/
+  674  cd release/
+  675  ls
+  676  git status
+  677  git add *
+  678  git status
+  679  clear
+  680  docker build -t apache2-21050832 .
+  681  docker images
+  682  docker push lithisha/apache2-21050832:latest
+  683  docker docker images
+  684  docker images
+  685  docker tag apache2-21050832:latest lithisha/apache2-21050832:1.0
+  686  docker login
+  687  docker tag apache2-21050832:latest lithisha/apache2-21050832:4.0
+  688  docker push lithisha/apache2-21050832:4.0
+  689  docker ps -a
+  690  docker ps 
+  691  docker run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832 /bin/bash
+  692  docker ps
+  693  docker -t exec apache2-21050832 /bin/bash
+  694  docker container -tf apache2-210550832
+  695  docker ps
+  696  docker exec -it apache2-21050832 /bin/bash
+  697  docker inspect apache2-21050832
+  698  docker stop apache2-21050832 
+  699  exit
+  700  netstat -rn
+  701  docker ps -a
+  702  ifconfig br-3010cf456f5e down
+  703  netstat -rn
+  704  history
+  705  docker stop apache2-21050832 
+  706  clear
+  707  docker stop apache2-21050832 
+  708  docker stop -f apache2-21050832 
+  709  docker stop --help
+  710  clear
+  711  docker exec -it apache2-21050832 /bin/bash
+  712  docker stop apache2-21050832 
+  713  docker kill --help
+  714  docker kill apache2-21050832 
+  715  docker ps
+  716  init --help
+  717  init 6
+  718  docker images
+  719  docker ps 
+  720  docker container prune -a
+  721  docker container prune -q
+  722  docker container prune
+  723  docker ps -a
+  724  clear
+  725  docker images
+  726  docker images apache2-21050832
+  727  clear
+  728  docker images
+  729  docker iamges prune -a
+  730  docker images prune -a
+  731  clear
+  732  docker images
+  733  docker container prune -q
+  734  docker container prune -a
+  735  docker container prune 
+  736  docker ps -a
+  737  docker container ps -a
+  738  clear
+  739  docker images
+  740  docker image prune -a
+  741  docker images
+  742  clear
+  743  cd /home/dockeradm/Planet-Corps_Project/
+  744  cd release/
+  745  clear
+  746  vi Dockerfile 
+  747  docker build -t apache2-21050832 .
+  748  history
+  749  run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832 /bin/bash
+  750  docker run -dit --name apache2-21050832 -p 5000:80 --mount src=localwebvolume,dst=/var/www/html apache2-21050832 /bin/bash
+  751  docker ps
+  752  clear
+  753  docker container inspect apache2-21050832 
+  754  ping 172.17.0.2
+  755  telnet 172.17.0.2 500
+  756  docker exec it apache2-21050832 /bin/bash
+  757  docker ps -a
+  758  docker ps
+  759  clear
+  760  docker container ps -a
+  761  docker exec -t apache2-21050832 /bin/bash
+  762  history > /home/dockeradm/Planet-Corps_Project/release/history1.txt
