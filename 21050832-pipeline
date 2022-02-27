@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+    stages {
+
+        stage("Stage 1-21050832")
+        {
+            steps
+            {
+                script {
+                        echo "Stage-1 Completed -21050832"
+                    }
+            }
+        }
+
+        stage("Stage-2-21050832 ")
+        {
+            steps
+            {
+                script {
+                             echo "Stage-2 Completed -21050832"
+                    }
+                  }
+                  
+                }
+                    
+          stage("Stage-3-21050832 ")
+        {
+            steps
+            {
+                script {
+                             echo "Stage-3 Completed -21050832"
+                    }   
+                    }
+                    }
+                    
+                    
+         stage("Stage-4-21050832 ")
+        {
+            steps
+            {
+                script {
+                             echo "Stage-4 Completed -21050832"
+                    }
+                    
+                    }
+                    }
+                    
+           stage("Stage-5-21050832 ")
+        {
+            steps
+            {
+                script {
+                             echo "Stage-5 Completed -21050832"
+                    }         
+                    
+                    
+            }
+        }
+    }
+}
+}
